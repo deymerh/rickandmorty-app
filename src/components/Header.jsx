@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = () => {
@@ -6,15 +7,15 @@ export const Header = () => {
     <HeaderComponent>
       <div className="Header-log">
         <h1>
-          <a href="/">
+          <Link to="/">
             Rick and Morthy
-            </a>
+          </Link>
         </h1>
       </div>
       <div className="Header-nav">
-        <a href="#/about">
+        <Link href="/">
           About
-          </a>
+        </Link>
       </div>
     </HeaderComponent>
   )

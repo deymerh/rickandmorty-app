@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const CardItem = ({ id, image, name }) => {
   return (
     <Character>
-      <a href={id}>
+      <a href={`/character/${id}`}>
         <img src={image} alt={name} />
         <h2>{name}</h2>
       </a>

@@ -6,7 +6,6 @@ import { CardItem } from './CardItem';
 
 export const Home = () => {
   const { data: characters } = useFetch(`${API}/character`);
-  console.log(characters);
   return (
     <MainComponent>
       {
