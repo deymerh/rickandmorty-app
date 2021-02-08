@@ -18,16 +18,18 @@ export const useFetch = (url) => {
     })
     fetch(url)
       .then(res => res.json())
-      .then(data => {
+      .then((data) => {
         if (isMounted.current) {
           setState({
             loading: false,
             error: null,
             data: data
+            // data: [...data, Object.values(results)]
           })
         }
       })
       .catch(() => {
+        console.log('Entre al catch')
         setState({
           data: null,
           loading: false,
@@ -36,4 +38,5 @@ export const useFetch = (url) => {
       })
   }, [url])
   return state;
+
 }
