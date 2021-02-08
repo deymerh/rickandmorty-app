@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         filename: 'bundle.js',
         publicPath: '/'
     },
@@ -26,16 +27,18 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: [
-                    { loader: 'html-loader'}
+                    { loader: 'html-loader' }
                 ]
             }
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './public/index.html',
-            filename: './index.html'
-        })
+            filename: './index.html',
+            inject: true,
+            template: './public/index.html'
+        }),
+        new CleanWebpackPlugin()
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
