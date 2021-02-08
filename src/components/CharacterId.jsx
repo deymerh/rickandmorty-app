@@ -10,11 +10,11 @@ export const CharacterId = () => {
   return (
     <>
       <CharacterIdStyle>
-        <article class="Characters-card">
+        <article className="Characters-card">
           <img src={character?.image} alt={character?.name} />
           <h2>{character?.name}</h2>
         </article>
-        <article class="Characters-card">
+        <article className="Characters-card">
           <h3>Episodes: <span>{character?.episode?.length}</span> </h3>
           <h3>Status: <span>{character?.status}</span> </h3>
           <h3>Species: <span>{character?.species}</span> </h3>
@@ -28,7 +28,7 @@ export const CharacterId = () => {
           let urlShort = url.slice(32).replace('/', ' nº ');
           let urlTo = url.slice(32);
           return (
-            <ul>
+            <ul key={i}>
               <Link to={`/${urlTo}`}>
                 <li>{i + 1} {urlShort}</li>
               </Link>

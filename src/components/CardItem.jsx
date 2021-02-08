@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const CardItem = ({ id, image, name }) => {
   return (
     <Character>
-      <a href={`/character/${id}`}>
+      <Link to={`/character/${id}`}>
         <img src={image} alt={name} />
         <h2>{name}</h2>
-      </a>
+      </Link>
     </Character>
   )
 };

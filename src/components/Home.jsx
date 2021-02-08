@@ -31,6 +31,7 @@ export const Home = () => {
             characters?.results.map(character => {
               return (
                 <CardItem
+                  key={character.id}
                   id={character.id}
                   image={character.image}
                   name={character.name}
